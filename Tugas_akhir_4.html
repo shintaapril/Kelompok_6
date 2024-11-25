@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangkuman Materi JavaScript</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e6f4ea; /* Hijau muda sebagai latar belakang */
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #2f6627; /* Hijau gelap */
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #276634;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 5px;
+        }
+        pre {
+            background-color: #f7fcf8;
+            border-left: 5px solid #81c784;
+            border-radius: 5px;
+            padding: 15px;
+            font-family: monospace;
+        }
+        section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        ul li::marker {
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body class="container py-4">
+    <h1 class="text-center">Rangkuman Materi JavaScript</h1>
+
+    <section>
+        <h2>46. JS Loop For In</h2>
+        <p>Iterasi properti dalam sebuah objek:</p>
+        <pre>
+for (let key in object) {
+    console.log(key); // Mengakses nama properti
+    console.log(object[key]); // Mengakses nilai properti
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>47. JS Loop For Of</h2>
+        <p>Iterasi elemen dalam objek yang dapat diiterasi:</p>
+        <pre>
+for (let element of iterable) {
+    console.log(element);
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>48. JS Loop While</h2>
+        <p>Menjalankan blok kode selama kondisi bernilai <code>true</code>:</p>
+        <pre>
+while (condition) {
+    // code
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>49. JS Break</h2>
+        <p>Menghentikan loop atau <code>switch</code> sebelum selesai:</p>
+        <pre>
+for (let i = 0; i < 10; i++) {
+    if (i === 5) break;
+    console.log(i);
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>50. JS Iterables</h2>
+        <p>Struktur data seperti Array atau String yang dapat diiterasi, digunakan dengan <code>for...of</code>.</p>
+    </section>
+
+    <section>
+        <h2>51. JS Sets</h2>
+        <p>Kumpulan nilai unik tanpa duplikasi:</p>
+        <pre>
+const mySet = new Set();
+mySet.add(1);
+mySet.add(2);
+console.log(mySet.has(1)); // true
+        </pre>
+    </section>
+
+    <section>
+        <h2>52. JS Set Methods</h2>
+        <p>Metode untuk bekerja dengan <code>Set</code>:</p>
+        <ul>
+            <li><code>add(value)</code>: Menambahkan elemen.</li>
+            <li><code>delete(value)</code>: Menghapus elemen.</li>
+            <li><code>has(value)</code>: Memeriksa keberadaan elemen.</li>
+            <li><code>clear()</code>: Menghapus semua elemen.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>53. JS Maps</h2>
+        <p>Struktur data untuk menyimpan pasangan <code>key-value</code>:</p>
+        <pre>
+const myMap = new Map();
+myMap.set("key1", "value1");
+console.log(myMap.get("key1")); // "value1"
+        </pre>
+    </section>
+
+    <section>
+        <h2>54. JS Map Methods</h2>
+        <p>Metode untuk bekerja dengan <code>Map</code>:</p>
+        <ul>
+            <li><code>set(key, value)</code>: Menambahkan pasangan key-value.</li>
+            <li><code>get(key)</code>: Mengambil nilai berdasarkan kunci.</li>
+            <li><code>delete(key)</code>: Menghapus pasangan.</li>
+            <li><code>has(key)</code>: Memeriksa keberadaan kunci.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>55. JS Typeof</h2>
+        <p>Operator untuk memeriksa tipe data:</p>
+        <pre>
+    console.log(typeof 123); // "number"
+    console.log(typeof "hello"); // "string"
+        </pre>
+    </section>
+    
+    <section>
+        <h2>56. JS Type Conversion</h2>
+        <p>Mengubah tipe data:</p>
+        <pre>
+    // String ke Number
+    let num = Number("123");
+    console.log(num); // 123
+    
+    // Number ke String
+    let str = String(123);
+    console.log(str); // "123"
+        </pre>
+    </section>
+    
+    <section>
+        <h2>57. JS Destructuring</h2>
+        <p>Ekstraksi nilai dari array atau objek ke dalam variabel:</p>
+        <pre>
+    // Array destructuring
+    const [a, b] = [1, 2];
+    console.log(a, b); // 1, 2
+    
+    // Object destructuring
+    const {name, age} = {name: "John", age: 30};
+    console.log(name, age); // John, 30
+        </pre>
+    </section>
+    
+    <section>
+        <h2>58. JS Bitwise</h2>
+        <p>Operator yang bekerja pada representasi biner angka:</p>
+        <pre>
+    console.log(5 & 1); // AND -> 1
+    console.log(5 | 1); // OR -> 5
+    console.log(5 ^ 1); // XOR -> 4
+        </pre>
+    </section>
+    
+    <section>
+        <h2>59. JS RegExp (Regular Expressions)</h2>
+        <p>Pola untuk mencocokkan string:</p>
+        <pre>
+    const regex = /hello/i;
+    console.log(regex.test("Hello")); // true
+        </pre>
+    </section>
+    
+    <section>
+        <h2>60. JS Precedence</h2>
+        <p>Urutan operator dievaluasi:</p>
+        <pre>
+    let result = 10 + 2 * 3; // 10 + (2 * 3) = 16
+        </pre>
+    </section>    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
