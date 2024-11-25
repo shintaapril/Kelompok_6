@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rangkuman JavaScript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+      /* Global Styles */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        background: linear-gradient(120deg, #89f7fe, #66a6ff);
+        color: #222121;
+        line-height: 1.8;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(39, 39, 39, 0.3);
+        animation: fadeIn 1s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.9rem;
+        color: #007acc;
+        margin-bottom: 20px;
+      }
+
+      h1::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #007acc;
+        margin: 10px auto;
+        border-radius: 5px;
+      }
+
+      h2 {
+        color: #0056b3;
+        margin-top: 30px;
+        font-size: 1.8rem;
+      }
+
+      p,
+      ul {
+        margin: 10px 0;
+        color: #555;
+        font-size: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      ul li {
+        margin: 10px 0;
+        position: relative;
+        padding-left: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      ul li:hover {
+        transform: translateX(10px);
+      }
+
+      ul li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: #1c2220;
+      }
+
+      pre {
+        background: #31ffcc;
+        color: #1a1919;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 15px 0;
+        font-size: 0.9rem;
+        overflow-x: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      pre:hover {
+        background: #31ffcc;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 0.9rem;
+        color: #8d867f;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .back-to-top {
+        display: inline-block;
+        margin-top: 20px;
+        background: #03dd9c;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+
+      .back-to-top:hover {
+        background: #0be9b1;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        h2 {
+          font-size: 1.6rem;
+        }
+
+        ul li {
+          padding-left: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rangkuman Materi JavaScript</h1>
+
+      <h2>1. JS Introduction</h2>
+      <p>JavaScript adalah bahasa pemrograman yang digunakan di web untuk membuat halaman menjadi lebih interaktif. Dapat digunakan di frontend (browser) dan backend (Node.js).</p>
+      <p>JavaScript dapat mengubah atribut HTML. Contohnya:</p>
+      <pre><code>&lt;button onclick="document.getElementById('myImage').src='https://via.placeholder.com/150?text=ON'"&gt;Turn on the light&lt;/button&gt;
+
+&lt;img id="myImage" src="https://via.placeholder.com/150?text=OFF" style="width: 100px" /&gt;
+
+&lt;button onclick="document.getElementById('myImage').src='https://via.placeholder.com/150?text=OFF'"&gt;Turn off the light&lt;/button&gt;</code></pre>
+
+      <h2>2. JS Where To</h2>
+      <p>JavaScript dapat diletakkan di:</p>
+      <ul>
+        <li><strong>Inline</strong>: Dalam atribut elemen HTML seperti <code>onclick</code>.</li>
+        <li><strong>Internal</strong>: Dalam tag <code>&lt;script&gt;</code> di dalam file HTML.</li>
+        <li><strong>External</strong>: Di file <code>.js</code> yang terpisah.</li>
+      </ul>
+
+      <h2>3. JS Output</h2>
+      <p>JavaScript output adalah cara untuk menampilkan data hasil kode kepada pengguna.</p>
+      <ul>
+        <li><code>document.write()</code>: Menulis langsung ke halaman.</li>
+        <li><code>alert()</code>: Menampilkan pesan pop-up.</li>
+        <li><code>console.log()</code>: Menampilkan output di konsol browser.</li>
+        <li>Manipulasi DOM seperti <code>innerHTML</code>.</li>
+      </ul>
+
+      <h2>4. JS Statements</h2>
+      <p>Pernyataan adalah instruksi, biasanya diakhiri dengan titik koma (<code>;</code>).</p>
+      <pre><code>let nama = "John";
+console.log(nama);</code></pre>
+
+      <h2>5. JS Syntax</h2>
+      <ul>
+        <li>Gunakan titik koma (<code>;</code>) untuk mengakhiri pernyataan.</li>
+        <li>Case-sensitive (huruf besar dan kecil dibedakan).</li>
+      </ul>
+
+      <h2>6. JS Comments</h2>
+      <p>Komentar adalah teks dalam kode yang tidak dieksekusi.</p>
+      <pre><code>// Komentar satu baris
+/* Komentar 
+   banyak baris */</code></pre>
+
+      <h2>7. JS Variables</h2>
+      <p>Variabel digunakan untuk menyimpan data:</p>
+      <ul>
+        <li><code>var</code>: Scope global.</li>
+        <li><code>let</code>: Scope blok.</li>
+        <li><code>const</code>: Nilai konstan.</li>
+      </ul>
+
+      <h2>8. JS Let</h2>
+      <pre><code>let umur = 25;</code></pre>
+
+      <h2>9. JS Const</h2>
+      <pre><code>const pi = 3.14;</code></pre>
+
+      <h2>10. JS Operators</h2>
+      <ul>
+        <li>Aritmatika: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>.</li>
+        <li>Perbandingan: <code>==</code>, <code>&gt;</code>, <code>&lt;</code>.</li>
+        <li>Logika: <code>&&</code>, <code>||</code>, <code>!</code>.</li>
+      </ul>
+
+      <h2>11. JS Arithmetic</h2>
+      <pre><code>let hasil = 10 + 5; // Penjumlahan</code></pre>
+
+      <h2>12. JS Assignment</h2>
+      <pre><code>let x = 10;
+x += 5; // x = x + 5</code></pre>
+
+      <h2>13. JS Data Types</h2>
+      <ul>
+        <li>String: <code>"Hello"</code>.</li>
+        <li>Number: <code>42</code>.</li>
+        <li>Boolean: <code>true</code> atau <code>false</code>.</li>
+        <li>
+          Object:
+          <code
+            >{
+            <h2>14. JS Functions</h2>
+            <p>Fungsi adalah blok kode yang dirancang untuk melakukan tugas tertentu dan dapat digunakan kembali.</p>
+            <p>Contoh membuat fungsi:</p>
+            <pre><code>function sapa(nama) {
+  return "Halo, " + nama + "!";
+}
+
+console.log(sapa("John")); // Output: Halo, John!
+</code></pre>
+            <p>Fungsi juga bisa didefinisikan sebagai ekspresi:</p>
+            <pre><code>const tambah = function(a, b) {
+  return a + b;
+};
+
+console.log(tambah(5, 3)); // Output: 8
+</code></pre>
+
+            <h2>15. JS Objects</h2>
+            <p>Objek adalah struktur data yang menyimpan properti (key-value pairs).</p>
+            <p>Contoh membuat objek:</p>
+            <pre><code>const mobil = {
+  merk: "Toyota",
+  model: "Corolla",
+  tahun: 2020,
+  nyalakan: function() {
+    console.log("Mobil menyala...");
+  }
+};
+
+console.log(mobil.merk); // Output: Toyota
+mobil.nyalakan(); // Output: Mobil menyala...
+</code></pre>
+            <p>Objek bisa dimanipulasi dengan menambahkan, menghapus, atau mengubah properti:</p>
+            <pre><code>mobil.warna = "Putih"; // Menambah properti
+delete mobil.tahun; // Menghapus properti
+mobil.merk = "Honda"; // Mengubah nilai
+</code></pre>
+          </code>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
