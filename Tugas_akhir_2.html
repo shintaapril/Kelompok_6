@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangkuman JavaScript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Nunito:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #e3f2fd, #bbdefb); /* Gradien marine vintage */
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 600;
+            background: linear-gradient(90deg, #3b9f9f, #4cbbb6, #6cb3b0);
+            color: white;
+            padding: 30px 20px;
+            margin: 0;
+            font-size: 2.8em;
+            text-align: center;
+            letter-spacing: 2px;
+            border-bottom: 5px solid #3b9f9f;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            margin: 30px 20px 10px;
+            font-weight: 600;
+            font-size: 1.8em;
+            color: #3b9f9f;
+            display: inline-block;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #3b9f9f;
+            left: 0;
+            bottom: -5px;
+        }
+
+        p {
+            margin: 10px 20px;
+            font-size: 1.1em;
+        }
+
+        ul {
+            margin: 10px 40px;
+            padding-left: 20px;
+            list-style-type: decimal;
+        }
+
+        pre {
+            background-color: #e8f0fe;
+            color: #212121;
+            padding: 15px;
+            margin: 15px 20px;
+            border-left: 5px solid #3b9f9f;
+            font-family: 'Fira Code', monospace;
+            font-size: 1em;
+            border-radius: 5px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        code {
+            background-color: #f0f4f8;
+            color: #3b9f9f;
+            padding: 3px 5px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        footer {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            padding: 15px;
+            background-color: #bbdefb;
+            border-top: 3px solid #3b9f9f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rangkuman Materi JavaScript</h1>
+
+    <h2>16. JS Object Properties</h2>
+    <p>Properti objek adalah pasangan nama dan nilai yang disimpan dalam sebuah objek. Akses properti objek bisa dilakukan menggunakan notasi titik (<code>object.property</code>) atau notasi kurung siku (<code>object["property"]</code>).</p>
+
+    <h2>17. JS Object Methods</h2>
+    <p>Metode objek adalah fungsi yang dimiliki oleh suatu objek. Metode ini bisa mengakses data internal objek menggunakan <code>this</code>. Contoh:
+        <pre><code>const person = {
+    name: "John",
+    greet: function() {
+        return "Halo, " + this.name;
+    }
+};</code></pre>
+    </p>
+
+    <h2>18. JS Object Display</h2>
+    <p>Untuk menampilkan objek dalam JavaScript, gunakan <code>console.log()</code> untuk debugging, atau <code>JSON.stringify()</code> untuk mengubah objek menjadi string JSON.</p>
+
+    <h2>19. JS Object Constructors</h2>
+    <p>Object constructor adalah fungsi khusus yang digunakan untuk membuat banyak objek dengan struktur yang sama. Contoh:
+        <pre><code>function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}</code></pre>
+    </p>
+
+    <h2>20. JS Events</h2>
+    <p>Event adalah aksi yang terjadi di halaman, seperti klik tombol atau scroll. JavaScript dapat menangkap event ini menggunakan <code>addEventListener</code>. Contoh:
+        <pre><code>button.addEventListener("click", function() {
+    alert("Button clicked!");
+});</code></pre>
+    </p>
+
+    <h2>21. JS Strings</h2>
+    <p>String adalah tipe data teks dalam JavaScript yang diapit oleh tanda kutip ganda (<code>" "</code>) atau tunggal (<code>' '</code>). String dapat menyimpan teks, angka, atau simbol.</p>
+
+    <h2>22. JS String Methods</h2>
+    <p>JavaScript menyediakan metode untuk memanipulasi string, seperti:
+        <ul>
+            <li><code>length</code>: Menghitung panjang string.</li>
+            <li><code>toUpperCase()</code>: Mengubah semua huruf menjadi kapital.</li>
+            <li><code>substring()</code>: Mengambil bagian dari string.</li>
+        </ul>
+    </p>
+
+    <h2>23. JS String Search</h2>
+    <p>Metode pencarian string memungkinkan kita mencari kata atau karakter tertentu, seperti:
+        <ul>
+            <li><code>indexOf()</code>: Mengembalikan indeks pertama dari teks tertentu.</li>
+            <li><code>search()</code>: Mencari pola atau string.</li>
+        </ul>
+    </p>
+
+    <h2>24. JS String Templates</h2>
+    <p>Template literals menggunakan backticks (<code>`</code>) dan dapat menyisipkan variabel atau ekspresi dengan <code>${}</code>. Contoh:
+        <pre><code>let name = "John";
+console.log(Halo, ${name});</code></pre>
+    </p>
+
+    <h2>25. JS Numbers</h2>
+    <p>Tipe data angka digunakan untuk menyimpan bilangan bulat, desimal, atau nilai khusus seperti <code>Infinity</code> dan <code>NaN</code>.</p>
+
+    <h2>26. JS BigInt</h2>
+    <p>Tipe data BigInt digunakan untuk angka yang lebih besar dari <code>Number.MAX_SAFE_INTEGER</code>. Contoh:
+        <pre><code>let big = 123456789012345678901234567890n;</code></pre>
+    </p>
+
+    <h2>27. JS Number Methods</h2>
+    <p>JavaScript memiliki metode untuk angka, seperti:
+        <ul>
+            <li><code>toString()</code>: Mengubah angka menjadi string.</li>
+            <li><code>toFixed()</code>: Membatasi jumlah angka desimal.</li>
+            <li><code>parseFloat()</code>: Mengubah string menjadi angka desimal.</li>
+        </ul>
+    </p>
+
+    <h2>28. JS Number Properties</h2>
+    <p>Properti angka mencakup:
+        <ul>
+            <li><code>MAX_VALUE</code>: Angka terbesar yang dapat direpresentasikan.</li>
+            <li><code>MIN_VALUE</code>: Angka terkecil positif.</li>
+            <li><code>NaN</code>: Not-a-Number.</li>
+        </ul>
+    </p>
+
+    <h2>29. JS Arrays</h2>
+    <p>Array adalah struktur data yang digunakan untuk menyimpan banyak nilai dalam satu variabel. Contoh:
+        <pre><code>let fruits = ["Apple", "Banana", "Mango"];</code></pre>
+    </p>
+
+    <h2>30. JS Array Methods</h2>
+    <p>Metode array meliputi:
+        <ul>
+            <li><code>push()</code>: Menambahkan elemen ke akhir array.</li>
+            <li><code>pop()</code>: Menghapus elemen terakhir dari array.</li>
+            <li><code>slice()</code>: Mengambil elemen dari array tanpa mengubah array asli.</li>
+        </ul>
+    </p>
+
+    <footer>© 2024 Keysha Pacar Jake. All Rights Reserved.</footer>
+</body>
+</html>
