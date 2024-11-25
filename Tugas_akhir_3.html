@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangkuman Materi JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #0056b3;
+            overflow-x: auto;
+        }
+        code {
+            color: #d6336c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rangkuman Materi JavaScript</h1>
+    </header>
+    <main>
+        <section id="array-search">
+            <h2>JS Array Search</h2>
+            <p>Metode untuk mencari elemen dalam array:</p>
+            <ul>
+                <li><code>indexOf()</code>: Mengembalikan indeks elemen pertama yang ditemukan.</li>
+                <li><code>lastIndexOf()</code>: Mengembalikan indeks elemen terakhir yang ditemukan.</li>
+                <li><code>find()</code>: Mengembalikan elemen pertama yang memenuhi kondisi.</li>
+                <li><code>findIndex()</code>: Mengembalikan indeks elemen pertama yang memenuhi kondisi.</li>
+            </ul>
+            <pre><code>let arr = [10, 20, 30];
+console.log(arr.indexOf(20)); // Output: 1</code></pre>
+        </section>
+
+        <section id="array-sort">
+            <h2>JS Array Sort</h2>
+            <p>Mengurutkan elemen dalam array:</p>
+            <ul>
+                <li><code>sort()</code>: Mengurutkan elemen secara alfabetis.</li>
+                <li><code>reverse()</code>: Membalik urutan elemen.</li>
+            </ul>
+            <pre><code>let fruits = ["Banana", "Apple", "Cherry"];
+fruits.sort(); // ["Apple", "Banana", "Cherry"]</code></pre>
+        </section>
+
+        <section id="array-iteration">
+            <h2>JS Array Iteration</h2>
+            <p>Metode untuk iterasi array:</p>
+            <ul>
+                <li><code>forEach()</code>: Menjalankan fungsi untuk setiap elemen.</li>
+                <li><code>map()</code>: Mengembalikan array baru berdasarkan transformasi.</li>
+                <li><code>filter()</code>: Mengembalikan elemen yang memenuhi kondisi.</li>
+                <li><code>reduce()</code>: Menggabungkan nilai menjadi satu hasil.</li>
+            </ul>
+        </section>
+
+        <section id="array-const">
+            <h2>JS Array Const</h2>
+            <p>Array yang dideklarasikan dengan <code>const</code> tetap dapat diubah elemennya, tetapi tidak bisa dideklarasikan ulang.</p>
+            <pre><code>const arr = [1, 2, 3];
+arr[0] = 10; // Valid
+arr = [4, 5, 6]; // Error</code></pre>
+        </section>
+
+        <section id="dates">
+            <h2>JS Dates</h2>
+            <p>Gunakan <code>Date</code> untuk bekerja dengan tanggal dan waktu:</p>
+            <pre><code>let today = new Date();</code></pre>
+        </section>
+
+        <section id="date-formats">
+            <h2>JS Date Formats</h2>
+            <p>Format tanggal:</p>
+            <ul>
+                <li><b>ISO</b>: <code>"2024-11-21T14:30:00"</code></li>
+                <li><b>Short</b>: <code>"11/21/2024"</code></li>
+                <li><b>Long</b>: <code>"November 21, 2024"</code></li>
+            </ul>
+        </section>
+
+        <section id="date-get-methods">
+            <h2>JS Date Get Methods</h2>
+            <p>Metode untuk mendapatkan informasi dari objek <code>Date</code>:</p>
+            <ul>
+                <li><code>getFullYear()</code>: Tahun.</li>
+                <li><code>getMonth()</code>: Bulan (0-11).</li>
+                <li><code>getDate()</code>: Hari dalam bulan.</li>
+            </ul>
+        </section>
+
+        <section id="date-set-methods">
+            <h2>JS Date Set Methods</h2>
+            <p>Metode untuk menetapkan tanggal dan waktu:</p>
+            <ul>
+                <li><code>setFullYear()</code>: Mengatur tahun.</li>
+                <li><code>setMonth()</code>: Mengatur bulan.</li>
+                <li><code>setDate()</code>: Mengatur hari dalam bulan.</li>
+            </ul>
+        </section>
+
+        <section id="math">
+            <h2>JS Math</h2>
+            <p>Objek <code>Math</code> menyediakan fungsi matematika:</p>
+            <ul>
+                <li><code>Math.round()</code>: Membulatkan angka ke integer terdekat.</li>
+                <li><code>Math.random()</code>: Menghasilkan angka acak antara 0 dan 1.</li>
+            </ul>
+        </section>
+
+        <section id="random">
+            <h2>JS Random</h2>
+            <p>Contoh menghasilkan angka acak:</p>
+            <pre><code>let rand = Math.floor(Math.random() * 10); // 0-9</code></pre>
+        </section>
+
+        <section id="booleans">
+            <h2>JS Booleans</h2>
+            <p>Tipe data boolean hanya memiliki nilai <code>true</code> atau <code>false</code>.</p>
+        </section>
+
+        <section id="comparisons">
+            <h2>JS Comparisons</h2>
+            <ul>
+                <li><code>==</code>: Perbandingan nilai.</li>
+                <li><code>===</code>: Perbandingan nilai dan tipe data.</li>
+                <li><code>!=</code>: Tidak sama.</li>
+            </ul>
+        </section>
+
+        <section id="if-else">
+            <h2>JS If Else</h2>
+            <p>Digunakan untuk pengambilan keputusan:</p>
+            <pre><code>if (x > 10) {
+    console.log("Besar");
+} else {
+    console.log("Kecil");
+}</code></pre>
+        </section>
+
+        <section id="switch">
+            <h2>JS Switch</h2>
+            <p>Digunakan untuk pengambilan keputusan dengan banyak kondisi:</p>
+            <pre><code>switch (day) {
+    case 1:
+        console.log("Senin");
+        break;
+    case 2:
+        console.log("Selasa");
+        break;
+}</code></pre>
+        </section>
+
+        <section id="loop-for">
+            <h2>JS Loop For</h2>
+            <p>Digunakan untuk iterasi:</p>
+            <pre><code>for (let i = 0; i < 5; i++) {
+    console.log(i);
+}</code></pre>
+        </section>
+    </main>
+</body>
+</html>
