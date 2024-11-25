@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangkuman JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0fdf4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            background-color: #76d079;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #4caf50;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 5px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #4caf50;
+            overflow-x: auto;
+        }
+        code {
+            background: #e7f3e7;
+            color: #d6336c;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rangkuman JavaScript</h1>
+        <p>dimulai dari ke-61: JS Errors hingga JS Reserved Words</p>
+    </header>
+    <main>
+        <!-- 61. JS Errors -->
+        <section id="errors">
+            <h2>61. JS Errors</h2>
+            <p>JavaScript memiliki berbagai jenis error yang dapat terjadi selama eksekusi:</p>
+            <ul>
+                <li><b>SyntaxError:</b> Kesalahan saat menulis sintaks yang tidak valid, misalnya kurung yang hilang.</li>
+                <li><b>ReferenceError:</b> Terjadi ketika mencoba mengakses variabel yang tidak didefinisikan.</li>
+                <li><b>TypeError:</b> Terjadi jika operasi dilakukan pada tipe data yang salah, misalnya memanggil properti dari <code>null</code>.</li>
+            </ul>
+            <p>Error dapat ditangani menggunakan blok <code>try...catch</code>:</p>
+            <pre><code>try {
+    let x = y; // ReferenceError
+} catch (error) {
+    console.log("Error:", error.message);
+}</code></pre>
+        </section>
+
+        <!-- 62. JS Scope -->
+        <section id="scope">
+            <h2>62. JS Scope</h2>
+            <p>Scope menentukan area di mana variabel dapat diakses. Ada tiga jenis utama scope:</p>
+            <ul>
+                <li><b>Global Scope:</b> Variabel yang dideklarasikan di luar fungsi atau blok dapat diakses dari mana saja.</li>
+                <li><b>Function Scope:</b> Variabel yang dideklarasikan dalam fungsi hanya dapat diakses di dalam fungsi tersebut.</li>
+                <li><b>Block Scope:</b> Dengan <code>let</code> atau <code>const</code>, variabel hanya dapat diakses di dalam bloknya.</li>
+            </ul>
+            <pre><code>let a = 10; // Global scope
+function test() {
+    let b = 20; // Function scope
+    if (true) {
+        let c = 30; // Block scope
+    }
+    console.log(b); // OK
+    console.log(c); // Error
+}</code></pre>
+        </section>
+
+        <!-- 63. JS Hoisting -->
+        <section id="hoisting">
+            <h2>63. JS Hoisting</h2>
+            <p>Hoisting memungkinkan variabel dan fungsi digunakan sebelum dideklarasikan:</p>
+            <ul>
+                <li>Hanya berlaku untuk <code>var</code>, fungsi, dan deklarasi class.</li>
+                <li>Variabel dengan <code>let</code> dan <code>const</code> tidak dapat digunakan sebelum deklarasi.</li>
+            </ul>
+            <pre><code>console.log(a); // undefined (hoisted)
+var a = 5;
+
+console.log(b); // Error (let tidak di-hoist)
+let b = 10;</code></pre>
+        </section>
+
+        <!-- 64. JS Strict Mode -->
+        <section id="strict-mode">
+            <h2>64. JS Strict Mode</h2>
+            <p><b>Strict mode</b> digunakan untuk menegakkan aturan yang lebih ketat dalam JavaScript:</p>
+            <ul>
+                <li>Mencegah penggunaan variabel tanpa deklarasi.</li>
+                <li>Menghindari kesalahan umum, seperti duplikasi parameter di fungsi.</li>
+            </ul>
+            <pre><code>"use strict";
+x = 10; // Error: x tidak dideklarasikan</code></pre>
+        </section>
+
+        <!-- 65. JS this Keyword -->
+        <section id="this-keyword">
+            <h2>65. JS this Keyword</h2>
+            <p><code>this</code> merujuk pada objek yang menjalankan fungsi tertentu:</p>
+            <ul>
+                <li>Dalam fungsi global, <code>this</code> merujuk ke <code>window</code>.</li>
+                <li>Dalam fungsi di objek, <code>this</code> merujuk ke objek tersebut.</li>
+            </ul>
+            <pre><code>const obj = {
+    name: "John",
+    greet: function() {
+        return "Hello, " + this.name;
+    }
+};
+console.log(obj.greet());</code></pre>
+        </section>
+
+        <!-- 66. JS Arrow Function -->
+        <section id="arrow-function">
+            <h2>66. JS Arrow Function</h2>
+            <p>Arrow function adalah cara singkat untuk menulis fungsi:</p>
+            <ul>
+                <li>Tidak memiliki <code>this</code>, sehingga cocok untuk callback.</li>
+                <li>Menawarkan sintaks yang lebih sederhana.</li>
+            </ul>
+            <pre><code>const add = (a, b) => a + b;</code></pre>
+        </section>
+
+        <!-- 67. JS Classes -->
+        <section id="classes">
+            <h2>67. JS Classes</h2>
+            <p>Kelas adalah cara untuk membuat blueprint dari objek:</p>
+            <pre><code>class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    speak() {
+        console.log(this.name + " makes a sound");
+    }
+}
+const dog = new Animal("Dog");
+dog.speak();</code></pre>
+        </section>
+
+        <!-- 68. JS Modules -->
+        <section id="modules">
+            <h2>68. JS Modules</h2>
+            <p>Modul memungkinkan pengelolaan kode menjadi file terpisah:</p>
+            <pre><code>// File: module1.js
+export const greet = () => "Hello";
+
+// File: main.js
+import { greet } from './module1.js';
+console.log(greet());</code></pre>
+        </section>
+
+        <!-- 69. JS JSON -->
+        <section id="json">
+            <h2>69. JS JSON</h2>
+            <p>JSON (JavaScript Object Notation) adalah format yang digunakan untuk pertukaran data:</p>
+            <pre><code>const jsonData = '{"name": "John", "age": 30}';
+const obj = JSON.parse(jsonData); // Mengubah JSON ke objek
+console.log(obj.name);</code></pre>
+        </section>
+
+        <!-- 70. JS Debugging -->
+        <section id="debugging">
+            <h2>70. JS Debugging</h2>
+            <p>Debugging membantu menemukan dan memperbaiki kesalahan dalam kode:</p>
+            <ul>
+                <li>Gunakan <code>console.log()</code> untuk memeriksa nilai variabel.</li>
+                <li>Gunakan <code>debugger</code> untuk menghentikan eksekusi di titik tertentu.</li>
+            </ul>
+        </section>
+
+        <!-- 71. JS Style Guide -->
+        <section id="style-guide">
+            <h2>71. JS Style Guide</h2>
+            <ul>
+                <li>Gunakan <code>camelCase</code> untuk penamaan variabel.</li>
+                <li>Hindari penggunaan <code>var</code>, gunakan <code>let</code> atau <code>const</code>.</li>
+            </ul>
+        </section>
+
+                <!-- 72. JS Best Practices -->
+                <section id="best-practices">
+                    <h2>72. JS Best Practices</h2>
+                    <p>Praktik terbaik dalam menulis kode JavaScript untuk meminimalkan bug dan meningkatkan efisiensi:</p>
+                    <ul>
+                        <li>Selalu gunakan <code>===</code> untuk perbandingan tipe dan nilai.</li>
+                        <li>Gunakan <code>const</code> untuk variabel yang tidak berubah dan <code>let</code> untuk variabel yang dapat berubah.</li>
+                        <li>Hindari penggunaan variabel global sebanyak mungkin.</li>
+                        <li>Berikan nama variabel dan fungsi yang jelas dan deskriptif.</li>
+                    </ul>
+                </section>
+        
+                <!-- 73. JS Mistakes -->
+                <section id="mistakes">
+                    <h2>73. JS Mistakes</h2>
+                    <p>Kesalahan umum yang sering dilakukan saat menulis JavaScript:</p>
+                    <ul>
+                        <li>Melupakan deklarasi variabel menggunakan <code>let</code>, <code>const</code>, atau <code>var</code>.</li>
+                        <li>Menggunakan variabel global tanpa sengaja, yang dapat menyebabkan konflik.</li>
+                        <li>Tidak memeriksa jenis data sebelum melakukan operasi, misalnya menambahkan string dan angka.</li>
+                        <li>Tidak menangani error menggunakan <code>try...catch</code>.</li>
+                    </ul>
+                </section>
+        
+                <!-- 74. JS Performance -->
+                <section id="performance">
+                    <h2>74. JS Performance</h2>
+                    <p>Tips untuk meningkatkan performa kode JavaScript:</p>
+                    <ul>
+                        <li>Kurangi manipulasi DOM karena itu memerlukan waktu proses yang besar.</li>
+                        <li>Gunakan <code>let</code> dan <code>const</code> untuk menghindari kebocoran memori.</li>
+                        <li>Cache data yang sering digunakan untuk mengurangi permintaan ulang.</li>
+                        <li>Hapus event listener yang tidak diperlukan untuk mencegah kebocoran memori.</li>
+                    </ul>
+                </section>
+        
+                <!-- 75. JS Reserved Words -->
+                <section id="reserved-words">
+                    <h2>75. JS Reserved Words</h2>
+                    <p>Kata-kata yang dicadangkan dalam JavaScript tidak dapat digunakan sebagai nama variabel atau identifier:</p>
+                    <ul>
+                        <li><code>break</code>, <code>case</code>, <code>class</code>, <code>const</code>, <code>continue</code></li>
+                        <li><code>debugger</code>, <code>default</code>, <code>delete</code>, <code>do</code>, <code>else</code></li>
+                        <li><code>export</code>, <code>extends</code>, <code>finally</code>, <code>for</code>, <code>function</code></li>
+                        <li><code>if</code>, <code>import</code>, <code>let</code>, <code>return</code>, <code>switch</code></li>
+                        <li><code>throw</code>, <code>try</code>, <code>var</code>, <code>while</code>, <code>yield</code></li>
+                    </ul>
+                </section>
+            </main>
+        </body>
+        </html>
